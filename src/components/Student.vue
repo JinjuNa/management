@@ -1,5 +1,6 @@
 <template>
   <div class="student content">
+    <div class="studentItem">
       <div class="filtering">
         <div class="filter">
           정렬기준 :
@@ -36,21 +37,93 @@
             <option value="">졸업</option>
           </select>
 
-          <span id="searchIcon">검색</span>
+          <button id="searchIcon">검색</button>
         </div>
 
+      </div>
+      <div class="studentList">
+        <table>
+          <tr>
+            <th>학생번호</th>
+            <th>이름</th>
+            <th>성별</th>
+            <th>학년</th>
+            <th>등록일자</th>
+            <th>상태</th>
+            <th>상세정보</th>
+            <th>삭제</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>강호동</td>
+            <td>남</td>
+            <td>초등 5</td>
+            <td>2020.1.10</td>
+            <td>수강</td>
+            <td><i class="far fa-file-alt"></i></td>
+            <td><i class="far fa-trash-alt"></i></td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>강호동</td>
+            <td>남</td>
+            <td>초등 5</td>
+            <td>2020.1.10</td>
+            <td>수강</td>
+            <td><i class="far fa-file-alt"></i></td>
+            <td><i class="far fa-trash-alt"></i></td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>강호동</td>
+            <td>남</td>
+            <td>초등 5</td>
+            <td>2020.1.10</td>
+            <td>수강</td>
+            <td><i class="far fa-file-alt"></i></td>
+            <td><i class="far fa-trash-alt"></i></td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>강호동</td>
+            <td>남</td>
+            <td>초등 5</td>
+            <td>2020.1.10</td>
+            <td>수강</td>
+            <td><i class="far fa-file-alt"></i></td>
+            <td><i class="far fa-trash-alt"></i></td>
+          </tr>
+        </table>
+      </div>
+      </div>
+      <div class="studentItem">
+      <StudentInfromation></StudentInfromation>
       </div>
   </div>
 </template>
 
 <script>
+import StudentInfromation from './StudentInformation'
 export default {
-  name: 'student'
+  name: 'student',
+  components : {
+    StudentInfromation
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+.studentItem{
+  float:left;
+}
+
+.studentItem:nth-child(1){
+  width:70%;
+}
+.studentItem:nth-child(2){
+  width: 30%;
+}
 .filtering{
   background-color: #9e9e9e;
   height: 80px;
@@ -68,9 +141,24 @@ export default {
   display: inline-block;
   width: 50px;
   height: 20px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
+  border:none;
   background-color: #333;
   color: white;
   text-align: center;
+}
+table{
+  width:100%;
+  background-color: white;
+}
+th{
+  background-color: #eee;
+  /* padding: 0 2.5%; */
+  /* border: 2px solid #333; */
+}
+
+td{
+  text-align: center;
+   /* border: 2px solid #333; */
 }
 </style>
