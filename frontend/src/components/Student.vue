@@ -97,19 +97,20 @@
       </div>
       </div>
       <div class="studentItem">
-      <StudentInfromation></StudentInfromation>
+      <!-- <StudentInfromation></StudentInfromation> -->
+      <router-view></router-view>
       </div>
   </div>
 </template>
 
 <script>
-import StudentInfromation from './StudentInformation'
+// import StudentInfromation from './StudentInformation'
 import axios from 'axios'
 
 export default {
   name: 'student',
   components : {
-    StudentInfromation
+    // StudentInfromation
   },
   data : function(){
     return{
@@ -182,4 +183,42 @@ td{
   text-align: center;
    /* border: 2px solid #333; */
 }
+/* studentInfromation */
+.studentInfromation{
+        background-color: #efefef;
+    }
+    .profile{
+        padding: 2%;
+        box-sizing: border-box;
+    }
+    .button{
+        text-align : right;
+        margin-right: 2%;
+        padding-top:2%;
+    }
+    .detail{
+        padding: 2%;
+        box-sizing: border-box;
+    }
+    .text{
+        display: inline-block;
+    }
+    .photo{
+        margin-top:2%;
+        margin-right: 5%;
+        width:35%;
+        /* height: 20%; */
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .photo img{
+        width:100%;
+        
+        /* height: 100%; */
+    }
+    #memo textarea{
+        display: block;
+
+    }
 </style>

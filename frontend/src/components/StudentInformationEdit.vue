@@ -1,10 +1,10 @@
 <template>
-  <div class="studentInfromation">
+  <div class="studentInfromation read">
       <div class="button">
           <button>수정</button>
       </div>
-      <!-- profile 보기/수정 상태에 따라서 router-view 사용해야하나? -->
-      <div class="profile">
+      
+      <div class="profile read">
           <div class="photo">
               <img src="../assets/student001.png" alt="학생 001 사진">
           </div>
@@ -69,47 +69,11 @@
 
 <script>
 export default {
-  name: 'StudentInformation'
+  name: 'StudentInformationRead'
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .studentInfromation{
-        background-color: #efefef;
-    }
-    .profile{
-        padding: 2%;
-        box-sizing: border-box;
-    }
-    .button{
-        text-align : right;
-        margin-right: 2%;
-        padding-top:2%;
-    }
-    .detail{
-        padding: 2%;
-        box-sizing: border-box;
-    }
-    .text{
-        display: inline-block;
-    }
-    .photo{
-        margin-top:2%;
-        margin-right: 5%;
-        width:35%;
-        /* height: 20%; */
-        display: inline-block;
-        vertical-align: top;
-    }
 
-    .photo img{
-        width:100%;
-        
-        /* height: 100%; */
-    }
-    #memo textarea{
-        display: block;
-
-    }
 </style>
