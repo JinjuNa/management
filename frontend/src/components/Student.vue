@@ -53,7 +53,17 @@
             <th>상세정보</th>
             <th>삭제</th>
           </tr>
-          <tr>
+          <tr v-bind:key=index v-for="(item, index) in data">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.sex}}</td>
+            <td>{{item.grade}}</td>
+            <td>{{item.register}}</td>
+            <td>{{item.state}}</td>
+            <td><i class="far fa-file-alt"></i></td>
+            <td><i class="far fa-trash-alt"></i></td>
+          </tr>
+          <!-- <tr>
             <td>1</td>
             <td>강호동</td>
             <td>남</td>
@@ -82,17 +92,7 @@
             <td>수강</td>
             <td><i class="far fa-file-alt"></i></td>
             <td><i class="far fa-trash-alt"></i></td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>강호동</td>
-            <td>남</td>
-            <td>초등 5</td>
-            <td>2020.1.10</td>
-            <td>수강</td>
-            <td><i class="far fa-file-alt"></i></td>
-            <td><i class="far fa-trash-alt"></i></td>
-          </tr>
+          </tr> -->
         </table>
       </div>
       </div>
@@ -104,10 +104,31 @@
 
 <script>
 import StudentInfromation from './StudentInformation'
+import axios from 'axios'
+
 export default {
   name: 'student',
   components : {
     StudentInfromation
+  },
+  data : function(){
+    return{
+      data : []
+    }
+  },
+  methods : {
+    getData : function(){
+      axios.get('http://localhost:3000/student').then((res) => {
+        console.log(res);
+        this.data = res.data
+        console.log(this.data)
+      }
+      )
+    }
+  },
+  beforeMount(){
+    this.getData()
+    // console.log(this.data)
   }
 }
 </script>
